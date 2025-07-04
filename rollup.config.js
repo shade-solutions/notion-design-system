@@ -4,7 +4,10 @@ import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { dts } from 'rollup-plugin-dts';
-import packageJson from './package.json';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const packageJson = require('./package.json');
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -28,7 +31,7 @@ const config = [
       resolve(),
       commonjs(),
       typescript({
-        tsconfig: './tsconfig.json',
+        tsconfig: './tsconfig.build.json',
         exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
       }),
       postcss({
@@ -37,15 +40,14 @@ const config = [
         },
         extensions: ['.css'],
         minimize: production,
-        inject: {
-          insertAt: 'top',
-        },
+        extract: 'styles.css',
+        inject: false,
       }),
     ],
     external: ['react', 'react-dom'],
   },
   {
-    input: 'dist/index.d.ts',
+    input: 'src/components/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.css$/],

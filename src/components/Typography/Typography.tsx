@@ -82,7 +82,7 @@ const Typography: React.FC<TypographyProps> = ({
         alignStyles[align],
         className
       )}
-      {...props}
+      {...(props as any)}
     >
       {children}
     </Component>

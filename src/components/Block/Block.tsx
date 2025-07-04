@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { clsx } from 'clsx';
-import { 
-  Type, 
-  Hash, 
-  List, 
-  ListOrdered, 
-  Square, 
-  CheckSquare, 
-  ChevronRight, 
+import {
+  Type,
+  Hash,
+  List,
+  ListOrdered,
+  Square,
+  CheckSquare,
+  ChevronRight,
   ChevronDown,
   Quote,
   Code
@@ -30,6 +30,17 @@ const Block: React.FC<BlockProps> = ({
   const [isChecked, setIsChecked] = useState(checked);
   const [text, setText] = useState(content);
 
+  const getVariant = () => {
+    switch (type) {
+      case 'heading':
+        return level === 1 ? 'h1' : level === 2 ? 'h2' : 'h3';
+      default:
+        return 'body1';
+    }
+  };
+
+  const variant = getVariant();
+
   const getIcon = () => {
     switch (type) {
       case 'text':
@@ -41,53 +52,36 @@ const Block: React.FC<BlockProps> = ({
       case 'numbered':
         return <ListOrdered size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary" />;
       case 'todo':
-        return isChecked ? 
-          <CheckSquare size={16} className="text-notion-green cursor-pointer" onClick={() => setIsChecked(!isChecked)} /> :
-          <Square size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary cursor-pointer" onClick={() => setIsChecked(!isChecked)} />;
+        return (
+          <button
+            onClick={() => setIsChecked(!isChecked)}
+            className="flex items-center justify-center w-4 h-4 border border-notion-border rounded-sm hover:bg-notion-bg-secondary dark:border-notion-dark-border dark:hover:bg-notion-dark-bg-secondary"
+          >
+            {isChecked && <CheckSquare size={12} className="text-notion-blue" />}
+          </button>
+        );
       case 'toggle':
-        return isCollapsed ?
-          <ChevronRight size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary cursor-pointer" onClick={() => setIsCollapsed(!isCollapsed)} /> :
-          <ChevronDown size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary cursor-pointer" onClick={() => setIsCollapsed(!isCollapsed)} />;
+        return (
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="flex items-center justify-center w-4 h-4 text-notion-text-tertiary hover:text-notion-text-primary dark:text-notion-dark-text-tertiary dark:hover:text-notion-dark-text-primary"
+          >
+            {isCollapsed ? <ChevronRight size={12} /> : <ChevronDown size={12} />}
+          </button>
+        );
       case 'quote':
         return <Quote size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary" />;
       case 'code':
         return <Code size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary" />;
       default:
-        return null;
-    }
-  };
-
-  const getTypographyVariant = () => {
-    if (type === 'heading') {
-      switch (level) {
-        case 1: return 'h1';
-        case 2: return 'h2';
-        case 3: return 'h3';
-        default: return 'h4';
-      }
-    }
-    return 'body1';
-  };
-
-  const getBlockStyles = () => {
-    const baseStyles = 'group flex items-start gap-2 min-h-[28px] py-1 px-2 rounded-notion hover:bg-notion-bg-tertiary dark:hover:bg-notion-dark-bg-tertiary transition-colors duration-150';
-    
-    switch (type) {
-      case 'quote':
-        return clsx(baseStyles, 'border-l-4 border-notion-text-tertiary dark:border-notion-dark-text-tertiary pl-4 italic');
-      case 'code':
-        return clsx(baseStyles, 'bg-notion-bg-tertiary dark:bg-notion-dark-bg-tertiary font-mono text-notion-sm');
-      case 'todo':
-        return clsx(baseStyles, isChecked && 'opacity-60');
-      default:
-        return baseStyles;
+        return <Square size={16} className="text-notion-text-tertiary dark:text-notion-dark-text-tertiary" />;
     }
   };
 
   const renderContent = () => {
     if (type === 'code') {
       return (
-        <pre className="flex-1 whitespace-pre-wrap font-mono text-notion-sm">
+        <pre className="bg-notion-bg-secondary dark:bg-notion-dark-bg-secondary p-3 rounded-notion font-mono text-notion-sm">
           <code>{text}</code>
         </pre>
       );
@@ -95,8 +89,7 @@ const Block: React.FC<BlockProps> = ({
 
     return (
       <div className="flex-1">
-        <Typography
-          variant={getTypographyVariant() as any}
+        <div
           className={clsx(
             'outline-none',
             isChecked && type === 'todo' && 'line-through',
@@ -104,11 +97,13 @@ const Block: React.FC<BlockProps> = ({
           )}
           contentEditable
           suppressContentEditableWarning
-          onBlur={(e) => setText(e.currentTarget.textContent || '')}
+          onBlur={(e: React.FocusEvent<HTMLDivElement>) => setText(e.currentTarget.textContent || '')}
         >
-          {text}
-        </Typography>
-        
+          <Typography variant={variant}>
+            {text}
+          </Typography>
+        </div>
+
         {type === 'toggle' && !isCollapsed && children && (
           <div className="ml-6 mt-2 space-y-1">
             {children}
@@ -119,15 +114,22 @@ const Block: React.FC<BlockProps> = ({
   };
 
   return (
-    <div className={clsx('notion-block', className)} {...props}>
-      <div className={getBlockStyles()}>
-        <div className="flex items-center justify-center w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity">
-          {getIcon()}
-        </div>
-        {renderContent()}
+    <div
+      id={id}
+      className={clsx(
+        'flex items-start space-x-2 py-1 px-2 rounded-notion hover:bg-notion-bg-secondary dark:hover:bg-notion-dark-bg-secondary group',
+        type === 'quote' && 'border-l-4 border-notion-text-tertiary dark:border-notion-dark-text-tertiary pl-4',
+        className
+      )}
+      {...props}
+    >
+      <div className="flex-shrink-0 pt-1">
+        {getIcon()}
       </div>
+      {renderContent()}
     </div>
   );
 };
 
 export default Block;
+export type { BlockProps };
