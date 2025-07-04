@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Info, Help, Settings } from 'lucide-react';
+import { Info, HelpCircle, Settings } from 'lucide-react';
 import Tooltip from './Tooltip';
 import Button from '../Button/Button';
 
@@ -92,7 +92,7 @@ export const WithIcons: Story = {
       
       <Tooltip content="Need help? Click here for documentation" trigger="click">
         <button className="p-2 text-notion-text-secondary hover:text-notion-text-primary dark:text-notion-dark-text-secondary dark:hover:text-notion-dark-text-primary transition-colors">
-          <Help size={16} />
+          <HelpCircle size={16} />
         </button>
       </Tooltip>
       
@@ -163,7 +163,7 @@ export const FormExample: Story = {
             placement="right"
             trigger="click"
           >
-            <Help size={14} className="inline ml-1 text-notion-text-tertiary dark:text-notion-dark-text-tertiary cursor-pointer" />
+            <HelpCircle size={14} className="inline ml-1 text-notion-text-tertiary dark:text-notion-dark-text-tertiary cursor-pointer" />
           </Tooltip>
         </label>
         <input 
