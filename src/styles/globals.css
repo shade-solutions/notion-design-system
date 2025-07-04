@@ -7,30 +7,31 @@
     @apply bg-notion-bg-primary text-notion-text-primary font-notion;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
+
   .dark body {
     @apply bg-notion-dark-bg-primary text-notion-dark-text-primary;
   }
 }
 
 @layer components {
+
   /* Notion-specific component styles */
   .notion-focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-notion-blue focus:ring-opacity-50;
   }
-  
+
   .notion-hover {
     @apply transition-colors duration-150 ease-in-out;
   }
-  
+
   .notion-button-base {
     @apply inline-flex items-center justify-center rounded-notion font-medium transition-all duration-150 ease-in-out notion-focus-ring;
   }
-  
+
   .notion-input-base {
     @apply w-full rounded-notion border border-notion-border bg-notion-bg-primary px-3 py-2 text-notion-sm placeholder:text-notion-text-tertiary notion-focus-ring;
   }
-  
+
   .dark .notion-input-base {
     @apply border-notion-dark-border bg-notion-dark-bg-primary placeholder:text-notion-dark-text-tertiary;
   }

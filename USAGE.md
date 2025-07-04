@@ -14,17 +14,17 @@
 
 ### npm
 ```bash
-npm install @sh20raj/notion-design-system
+npm install notion-design-system
 ```
 
 ### yarn
 ```bash
-yarn add @sh20raj/notion-design-system
+yarn add notion-design-system
 ```
 
 ### pnpm
 ```bash
-pnpm add @sh20raj/notion-design-system
+pnpm add notion-design-system
 ```
 
 ## Setup
@@ -35,19 +35,19 @@ Add the CSS file to your project. The method depends on your build system:
 #### Next.js
 ```jsx
 // pages/_app.js or app/layout.js
-import '@sh20raj/notion-design-system/dist/styles.css';
+import 'notion-design-system/dist/styles.css';
 ```
 
 #### Vite/React
 ```jsx
 // main.jsx or App.jsx
-import '@sh20raj/notion-design-system/dist/styles.css';
+import 'notion-design-system/dist/styles.css';
 ```
 
 #### Webpack/Create React App
 ```jsx
 // index.js or App.js
-import '@sh20raj/notion-design-system/dist/styles.css';
+import 'notion-design-system/dist/styles.css';
 ```
 
 ### 2. Configure Tailwind (Optional)
@@ -58,7 +58,7 @@ If you're using Tailwind CSS in your project, you can extend the theme with Noti
 module.exports = {
   content: [
     // ... your content paths
-    './node_modules/@sh20raj/notion-design-system/dist/**/*.js',
+    './node_modules/notion-design-system/dist/**/*.js',
   ],
   theme: {
     extend: {
@@ -96,7 +96,7 @@ function MyApp({ Component, pageProps }) {
 
 ### Button
 ```jsx
-import { Button } from '@sh20raj/notion-design-system';
+import { Button } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -120,7 +120,7 @@ function MyComponent() {
 
 ### Card
 ```jsx
-import { Card } from '@sh20raj/notion-design-system';
+import { Card } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -141,7 +141,7 @@ function MyComponent() {
 
 ### Typography
 ```jsx
-import { Typography } from '@sh20raj/notion-design-system';
+import { Typography } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -158,7 +158,7 @@ function MyComponent() {
 
 ### Input
 ```jsx
-import { Input } from '@sh20raj/notion-design-system';
+import { Input } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -180,7 +180,7 @@ function MyComponent() {
 
 ### Avatar
 ```jsx
-import { Avatar } from '@sh20raj/notion-design-system';
+import { Avatar } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -196,7 +196,7 @@ function MyComponent() {
 
 ### Badge
 ```jsx
-import { Badge } from '@sh20raj/notion-design-system';
+import { Badge } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -212,7 +212,7 @@ function MyComponent() {
 
 ### Tooltip
 ```jsx
-import { Tooltip } from '@sh20raj/notion-design-system';
+import { Tooltip } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -225,7 +225,7 @@ function MyComponent() {
 
 ### Sidebar
 ```jsx
-import { Sidebar } from '@sh20raj/notion-design-system';
+import { Sidebar } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -240,7 +240,7 @@ function MyComponent() {
 
 ### Block
 ```jsx
-import { Block } from '@sh20raj/notion-design-system';
+import { Block } from 'notion-design-system';
 
 function MyComponent() {
   return (
@@ -305,7 +305,7 @@ module.exports = {
 The package includes full TypeScript support with type definitions:
 
 ```tsx
-import { Button, ButtonProps } from '@sh20raj/notion-design-system';
+import { Button, ButtonProps } from 'notion-design-system';
 
 interface MyComponentProps {
   onSubmit: () => void;
@@ -385,7 +385,7 @@ import { MyButton } from '../components/MyButton';
 import './MyButton.css';
 
 // After
-import { Button } from '@sh20raj/notion-design-system';
+import { Button } from 'notion-design-system';
 ```
 
 ## FAQ
@@ -412,4 +412,4 @@ A: The components are built with production use in mind, but please test thoroug
 
 - **GitHub Issues**: https://github.com/shade-solutions/notion-design-system/issues
 - **Documentation**: https://github.com/shade-solutions/notion-design-system#readme
-- **NPM Package**: https://www.npmjs.com/package/@sh20raj/notion-design-system
+- **NPM Package**: https://www.npmjs.com/package/notion-design-system

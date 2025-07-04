@@ -168,7 +168,7 @@ Import the required styles in your main CSS file:
 ### 5. Start using components
 
 ```jsx
-import { Button, Card, Typography } from '@sh20raj/notion-design-system';
+import { Button, Card, Typography } from 'notion-design-system';
 
 function App() {
   return (
@@ -195,7 +195,7 @@ function App() {
 Notion-style buttons with multiple variants and sizes.
 
 ```jsx
-import { Button } from '@sh20raj/notion-design-system';
+import { Button } from 'notion-design-system';
 
 // Basic usage
 <Button variant="primary" size="md">
@@ -212,7 +212,7 @@ import { Button } from '@sh20raj/notion-design-system';
 Container component for grouping content.
 
 ```jsx
-import { Card } from '@sh20raj/notion-design-system';
+import { Card } from 'notion-design-system';
 
 <Card className="p-4">
   <p>Card content goes here</p>
@@ -223,7 +223,7 @@ import { Card } from '@sh20raj/notion-design-system';
 Text components with consistent styling.
 
 ```jsx
-import { Typography } from '@sh20raj/notion-design-system';
+import { Typography } from 'notion-design-system';
 
 <Typography variant="h1">Main Heading</Typography>
 <Typography variant="body">Body text</Typography>
@@ -234,7 +234,7 @@ import { Typography } from '@sh20raj/notion-design-system';
 Form input components with Notion styling.
 
 ```jsx
-import { Input } from '@sh20raj/notion-design-system';
+import { Input } from 'notion-design-system';
 
 <Input 
   placeholder="Enter your text..."
@@ -247,7 +247,7 @@ import { Input } from '@sh20raj/notion-design-system';
 User avatar component with fallback support.
 
 ```jsx
-import { Avatar } from '@sh20raj/notion-design-system';
+import { Avatar } from 'notion-design-system';
 
 <Avatar 
   src="https://example.com/avatar.jpg"
@@ -260,7 +260,7 @@ import { Avatar } from '@sh20raj/notion-design-system';
 Small labels for status, categories, etc.
 
 ```jsx
-import { Badge } from '@sh20raj/notion-design-system';
+import { Badge } from 'notion-design-system';
 
 <Badge variant="success">Published</Badge>
 <Badge variant="warning">Draft</Badge>
@@ -270,7 +270,7 @@ import { Badge } from '@sh20raj/notion-design-system';
 Contextual information on hover.
 
 ```jsx
-import { Tooltip } from '@sh20raj/notion-design-system';
+import { Tooltip } from 'notion-design-system';
 
 <Tooltip content="This is a tooltip">
   <button>Hover me</button>
@@ -281,7 +281,7 @@ import { Tooltip } from '@sh20raj/notion-design-system';
 Navigation sidebar component.
 
 ```jsx
-import { Sidebar } from '@sh20raj/notion-design-system';
+import { Sidebar } from 'notion-design-system';
 
 <Sidebar>
   <Sidebar.Item icon="home" active>
@@ -297,7 +297,7 @@ import { Sidebar } from '@sh20raj/notion-design-system';
 Notion-style block component for content organization.
 
 ```jsx
-import { Block } from '@sh20raj/notion-design-system';
+import { Block } from 'notion-design-system';
 
 <Block type="text">
   This is a text block
@@ -320,7 +320,7 @@ const toggleDarkMode = () => {
 All components are fully typed with TypeScript. You'll get excellent IntelliSense and type checking:
 
 ```tsx
-import { Button, ButtonProps } from '@sh20raj/notion-design-system';
+import { Button, ButtonProps } from 'notion-design-system';
 
 const CustomButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />;
@@ -395,18 +395,18 @@ MIT © [Rovo Dev](https://github.com/rovo-dev)
 ### Installation
 
 ```bash
-npm install @sh20raj/notion-design-system
+npm install notion-design-system
 # or
-yarn add @sh20raj/notion-design-system
+yarn add notion-design-system
 # or
-pnpm add @sh20raj/notion-design-system
+pnpm add notion-design-system
 ```
 
 ### Basic Usage
 
 ```tsx
-import { Button, Typography, Card } from '@sh20raj/notion-design-system';
-import '@sh20raj/notion-design-system/dist/styles.css';
+import { Button, Typography, Card } from 'notion-design-system';
+import 'notion-design-system/dist/styles.css';
 
 function App() {
   return (

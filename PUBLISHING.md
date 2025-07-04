@@ -36,10 +36,10 @@ This creates a `.tgz` file that you can test locally in another project.
 ```bash
 npm publish --access public
 ```
-Since this is a scoped package (`@sh20raj/notion-design-system`), you need the `--access public` flag.
+Since this is a scoped package (`notion-design-system`), you need the `--access public` flag.
 
 ### 6. Verify Publication
-Check your package at: `https://www.npmjs.com/package/@sh20raj/notion-design-system`
+Check your package at: `https://www.npmjs.com/package/notion-design-system`
 
 ## Version Management
 
