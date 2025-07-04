@@ -1,0 +1,111 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Welcome" />
+
+# Notion Design System
+
+Welcome to the **Notion Design System** - a comprehensive collection of React components inspired by Notion's clean and intuitive interface design.
+
+## 🎯 Overview
+
+This design system provides a complete set of building blocks for creating Notion-like interfaces. It includes:
+
+- **Core Components**: Button, Input, Typography, Card, Badge
+- **Layout Components**: Sidebar with nested navigation
+- **Content Components**: Block system for rich text editing
+- **Consistent Theming**: Light and dark mode support
+- **Accessibility**: WCAG compliant components
+- **TypeScript**: Full type safety and IntelliSense support
+
+## 🎨 Design Principles
+
+### Simplicity
+Clean, minimal design that doesn't get in the way of content.
+
+### Consistency
+Unified visual language across all components and interactions.
+
+### Accessibility
+Built with accessibility in mind, supporting keyboard navigation and screen readers.
+
+### Flexibility
+Highly customizable components that adapt to different use cases.
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
+npm install notion-design-system
+```
+
+### Basic Usage
+
+```tsx
+import { Button, Typography, Card } from 'notion-design-system';
+import 'notion-design-system/dist/styles.css';
+
+function App() {
+  return (
+    <Card>
+      <Typography variant="h2">Welcome to Notion</Typography>
+      <Typography variant="body1" color="gray">
+        Start building your next great idea.
+      </Typography>
+      <Button variant="primary">Get Started</Button>
+    </Card>
+  );
+}
+```
+
+## 🎭 Component Categories
+
+### Core Components
+Essential building blocks for any interface:
+- **Button** - Various styles and states
+- **Input** - Text inputs with validation
+- **Typography** - Consistent text styling
+- **Card** - Content containers
+- **Badge** - Labels and status indicators
+
+### Notion-Specific Components
+Components that capture Notion's unique interface patterns:
+- **Block** - Editable content blocks (text, headings, lists, etc.)
+- **Sidebar** - Hierarchical navigation with search
+
+## 🌙 Dark Mode
+
+All components support both light and dark themes. Toggle between themes using the toolbar controls in Storybook.
+
+## 📱 Responsive Design
+
+Components are built mobile-first and work seamlessly across all device sizes.
+
+## 🔧 Customization
+
+The design system uses CSS custom properties and Tailwind CSS for easy customization:
+
+```css
+:root {
+  --notion-bg-primary: #ffffff;
+  --notion-text-primary: #37352f;
+  --notion-blue: #2383e2;
+  /* ... more variables */
+}
+```
+
+## 📚 Documentation
+
+Each component includes:
+- **Props documentation** - Complete API reference
+- **Usage examples** - Common patterns and use cases
+- **Accessibility notes** - ARIA labels and keyboard support
+- **Design tokens** - Colors, spacing, and typography scales
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our contributing guidelines for more information.
+
+---
+
+**Happy building!** 🚀

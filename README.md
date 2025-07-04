@@ -1,40 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Notion Design System
 
-## Getting Started
+A comprehensive React component library inspired by Notion's clean and intuitive design language. Built with TypeScript, Tailwind CSS, and Storybook.
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 **Complete Component Library** - Buttons, inputs, typography, cards, badges, and more
+- 🏗️ **Notion-Specific Components** - Blocks, sidebar navigation, and page layouts
+- 🌙 **Dark Mode Support** - Seamless light and dark theme switching
+- 📱 **Responsive Design** - Mobile-first approach with responsive components
+- ♿ **Accessibility** - WCAG compliant with keyboard navigation and screen reader support
+- 🔧 **TypeScript** - Full type safety and excellent developer experience
+- 📚 **Storybook** - Comprehensive documentation and interactive examples
+- 🎯 **Customizable** - Easy theming with CSS custom properties
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
-npm run dev
+npm install notion-design-system
 # or
-yarn dev
+yarn add notion-design-system
 # or
-pnpm dev
-# or
-bun dev
+pnpm add notion-design-system
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Basic Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```tsx
+import { Button, Typography, Card } from 'notion-design-system';
+import 'notion-design-system/dist/styles.css';
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+function App() {
+  return (
+    <Card>
+      <Typography variant="h2">Welcome to Notion</Typography>
+      <Typography variant="body1" color="gray">
+        Start building your next great idea.
+      </Typography>
+      <Button variant="primary">Get Started</Button>
+    </Card>
+  );
+}
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## 📦 Components
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Core Components
 
-## Learn More
+- **Button** - Various styles, sizes, and states
+- **Input** - Text inputs with validation and icons
+- **Typography** - Consistent text styling with multiple variants
+- **Card** - Flexible content containers
+- **Badge** - Labels, tags, and status indicators
 
-To learn more about Next.js, take a look at the following resources:
+### Notion-Specific Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Block** - Editable content blocks (text, headings, lists, todos, toggles, quotes, code)
+- **Sidebar** - Hierarchical navigation with search and nested items
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Theming
 
-## Deploy on Vercel
+The design system uses CSS custom properties for easy customization:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```css
+:root {
+  /* Light theme */
+  --notion-bg-primary: #ffffff;
+  --notion-text-primary: #37352f;
+  --notion-blue: #2383e2;
+  
+  /* Dark theme */
+  --notion-dark-bg-primary: #191919;
+  --notion-dark-text-primary: #ffffff;
+}
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+.dark {
+  /* Dark theme variables are automatically applied */
+}
+```
+
+## 🌙 Dark Mode
+
+Toggle dark mode by adding the `dark` class to your root element:
+
+```tsx
+// Toggle dark mode
+document.documentElement.classList.toggle('dark');
+```
+
+## 📚 Development
+
+### Prerequisites
+
+- Node.js 16+
+- npm, yarn, or pnpm
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/notion-design-system.git
+cd notion-design-system
+
+# Install dependencies
+npm install
+
+# Start Storybook
+npm run storybook
+```
+
+### Available Scripts
+
+- `npm run storybook` - Start Storybook development server
+- `npm run build-storybook` - Build Storybook for production
+- `npm run dev` - Start Next.js development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Button/         # Button component and stories
+│   ├── Input/          # Input component and stories
+│   ├── Typography/     # Typography component and stories
+│   ├── Card/           # Card component and stories
+│   ├── Badge/          # Badge component and stories
+│   ├── Block/          # Block component and stories
+│   ├── Sidebar/        # Sidebar component and stories
+│   └── index.ts        # Component exports
+├── styles/             # Global styles and Tailwind config
+├── types/              # TypeScript type definitions
+└── stories/            # Storybook documentation stories
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests and stories for new components
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by [Notion](https://notion.so)'s beautiful and functional design
+- Built with [Storybook](https://storybook.js.org/) for component development
+- Styled with [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- Icons from [Lucide React](https://lucide.dev/)
+
+## 📞 Support
+
+- 📖 [Documentation](https://your-storybook-url.com)
+- 🐛 [Issue Tracker](https://github.com/your-username/notion-design-system/issues)
+- 💬 [Discussions](https://github.com/your-username/notion-design-system/discussions)
+
+---
+
+Made with ❤️ by the Notion Design System team
