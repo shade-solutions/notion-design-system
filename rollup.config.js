@@ -40,7 +40,7 @@ const config = [
         },
         extensions: ['.css'],
         minimize: production,
-        extract: 'styles.css',
+        extract: true,
         inject: false,
       }),
     ],

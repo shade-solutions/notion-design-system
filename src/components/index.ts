@@ -1,3 +1,6 @@
+// Styles
+import '../styles/globals.css';
+
 // Core Components
 export { default as Button } from './Button/Button';
 export type { ButtonProps } from './Button/Button';
