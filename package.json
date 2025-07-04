@@ -16,6 +16,9 @@
     "build-storybook": "storybook build",
     "dev": "rollup -c -w",
     "storybook": "storybook dev -p 6006",
+    "docs:dev": "storybook dev -p 6006",
+    "docs:build": "storybook build",
+    "docs:serve": "npx serve storybook-static -p 6007",
     "lint": "eslint src --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "prepublishOnly": "npm run build"
