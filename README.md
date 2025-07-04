@@ -2,6 +2,12 @@
 
 A comprehensive Notion-inspired design system built with React, TypeScript, and Tailwind CSS. This library provides a collection of reusable components that replicate the look and feel of Notion's interface.
 
+## 🌐 Live Documentation
+
+**📖 Interactive Documentation**: https://notion-design-system.surge.sh
+
+Explore all components with live examples, props documentation, and interactive controls.
+
 ## Features
 
 - 🎨 **Notion-inspired Design**: Carefully crafted components that match Notion's visual style
