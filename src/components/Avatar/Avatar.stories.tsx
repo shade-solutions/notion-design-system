@@ -15,15 +15,19 @@ const meta: Meta<typeof Avatar> = {
   tags: ['autodocs'],
   argTypes: {
     size: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       description: 'Size of the avatar',
     },
     shape: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['circle', 'square'],
       description: 'Shape of the avatar',
     },
+    className: { control: { type: 'text' } },
+    src: { control: { type: 'text' } },
+    alt: { control: { type: 'text' } },
+    fallback: { control: { type: 'text' } },
   },
 };
 
