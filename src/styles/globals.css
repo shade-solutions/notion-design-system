@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-notion-border;
-  }
-  
   body {
     @apply bg-notion-bg-primary text-notion-text-primary font-notion;
     font-feature-settings: "rlig" 1, "calt" 1;

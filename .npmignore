@@ -1,0 +1,33 @@
+# Source files
+src/
+stories/
+.storybook/
+
+# Build files
+.next/
+storybook-static/
+rollup.config.js
+tsconfig.json
+tailwind.config.js
+postcss.config.js
+next.config.js
+
+# Development files
+.env*
+.vscode/
+*.log
+node_modules/
+
+# Testing
+coverage/
+*.test.*
+*.spec.*
+
+# Documentation files (except README)
+docs/
+*.md
+!README.md
+
+# Git
+.git/
+.gitignore

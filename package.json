@@ -1,25 +1,36 @@
 {
-  "name": "notion-design-system",
+  "name": "@sh20raj/notion-design-system",
   "version": "1.0.0",
-  "description": "A comprehensive Notion-inspired design system built with Storybook",
-  "main": "index.js",
+  "description": "A comprehensive Notion-inspired design system built with React, TypeScript, and Tailwind CSS",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "storybook": "storybook dev -p 6006",
+    "build": "rollup -c",
     "build-storybook": "storybook build",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "rollup -c -w",
+    "storybook": "storybook dev -p 6006",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "lucide-react": "^0.294.0",
-    "clsx": "^2.0.0",
-    "tailwindcss": "^3.3.0"
+    "clsx": "^2.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@storybook/addon-essentials": "^7.6.0",
     "@storybook/addon-interactions": "^7.6.0",
     "@storybook/addon-links": "^7.6.0",
@@ -33,17 +44,33 @@
     "autoprefixer": "^10.4.16",
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
+    "next": "^14.0.0",
     "postcss": "^8.4.31",
+    "rollup": "^4.0.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.6.0",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5.0.0"
   },
   "keywords": [
     "design-system",
-    "storybook",
     "notion",
     "react",
-    "typescript"
+    "typescript",
+    "tailwind",
+    "ui-components",
+    "storybook"
   ],
-  "author": "Rovo Dev",
-  "license": "MIT"
+  "author": "sh20raj",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shade-solutions/notion-design-system.git"
+  },
+  "homepage": "https://github.com/shade-solutions/notion-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/shade-solutions/notion-design-system/issues"
+  }
 }
